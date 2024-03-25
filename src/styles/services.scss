@@ -1,0 +1,65 @@
+@import "_variables", "_media";
+
+* {
+  font-family: $font-family-base;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1230px;
+  width: 100%;
+  padding-inline: 15px;
+}
+
+.button {
+  height: $button-height;
+  padding-inline: $button-padding;
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 500;
+}
+
+.header {
+  &__inner {
+    padding-block: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 72px;
+    }
+
+    &-link {
+      @extend %text-regular;
+
+      color: $grayscale50;
+
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary100;
+      }
+
+      &--active {
+        font-weight: 600;
+      }
+    }
+
+    &-contact {
+      color: $grayscale-white;
+    }
+
+    &-item:last-child {
+      background-color: $primary100;
+      padding-inline: $button-padding;
+      height: $button-height;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

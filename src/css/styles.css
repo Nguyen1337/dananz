@@ -101,6 +101,7 @@
 .hero__info {
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .hero__title {
@@ -373,6 +374,7 @@
   color: #333333;
   display: flex;
   justify-content: space-between;
+  align-items: start;
   margin-right: 40px;
   transition: color 0.3s ease;
 }

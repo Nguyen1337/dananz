@@ -54,3 +54,10 @@ $button-height: 49px;
 $button-padding: 32px;
 
 $input-height: 62px;
+
+%mini {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: $grayscale-black;
+}

@@ -1,4 +1,4 @@
-@import "_variables";
+@import "_variables", "_media";
 
 * {
   font-family: $font-family-base;
@@ -73,6 +73,7 @@
   &__info {
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
   }
 
   &__title {
@@ -362,6 +363,7 @@
     color: $grayscale50;
     display: flex;
     justify-content: space-between;
+    align-items: start;
     margin-right: 40px;
     transition: color 0.3s ease;
 
