@@ -32,6 +32,10 @@
       display: flex;
       align-items: center;
       gap: 72px;
+
+      @include tablet {
+        display: none;
+      }
     }
 
     &-link {
@@ -68,6 +72,16 @@
   &__body {
     padding-top: 60px;
     padding-bottom: 80px;
+
+    @include tablet {
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
+
+    @include mobile {
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
   }
 
   &__info {
@@ -81,6 +95,10 @@
     @extend %title-first;
     max-width: 681px;
 
+    @include mobile-s {
+      font-size: 50px;
+    }
+
     &::after {
       position: absolute;
       content: "";
@@ -89,10 +107,18 @@
       top: 50px;
       left: 519px;
       background: $grayscale-black;
+
+      @include mobile {
+        display: none;
+      }
     }
 
     &-items {
       display: flex;
+
+      @include mobile {
+        text-align: end;
+      }
     }
 
     &-text {
@@ -112,6 +138,10 @@
     background-repeat: no-repeat;
     width: 100%;
     padding: 257px;
+
+    @include mobile-s {
+      padding: 187px;
+    }
   }
 
   &__column {
@@ -124,10 +154,26 @@
     gap: 57px;
     background-color: $primary100;
 
+    @include tablet {
+      padding: 20px 25px;
+      right: 100px;
+      top: -126px;
+    }
+
+    @include mobile {
+      right: 27px;
+      top: -37px;
+      padding: 15px 21px;
+    }
+
     &-title {
       font-size: 52px;
       line-height: 160%;
       color: $grayscale-white;
+
+      @include mobile {
+        font-size: 32px;
+      }
     }
 
     &-text {
@@ -141,6 +187,18 @@
 .about {
   &__body {
     padding-block: 80px;
+
+    @include tablet {
+      padding-block: 40px;
+    }
+
+    @include mobile {
+      padding-block: 30px;
+    }
+
+    @include mobile-s {
+      padding-block: 20px;
+    }
   }
 
   &__title {
@@ -161,16 +219,41 @@
       background: $grayscale-black;
       height: 2px;
       width: 529px;
+
+      @include tablet {
+        width: 100%;
+      }
     }
   }
 
   &__info {
     @extend %title-third;
     margin-bottom: 60px;
+
+    @include tablet {
+      font-size: clamp(18px, 4vw, 36px);
+    }
+  }
+
+  &__image {
+    @include desktop {
+      width: 100%;
+      position: relative;
+    }
   }
 
   &__content {
     display: flex;
+
+    @include desktop {
+      position: relative;
+    }
+
+    @include mobile-s {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
   }
 
   &__column {
@@ -178,6 +261,34 @@
     padding-left: 94px;
     padding-top: 197px;
     padding-bottom: 94px;
+
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      max-width: 300px;
+      padding-left: 0;
+      position: absolute;
+      background-color: rgb(0, 0, 0, 0.4);
+      top: -55px;
+      right: 3%;
+      box-shadow: 0px 0px 45px 45px rgba(255, 255, 255, 0.2);
+    }
+
+    @include tablet {
+      padding-bottom: 40px;
+    }
+
+    @include mobile {
+      padding-top: 125px;
+      top: unset;
+      bottom: -20%;
+    }
+
+    @include mobile-s {
+      position: unset;
+      padding-top: 20px;
+      border-radius: 10px;
+    }
 
     &-person {
       position: absolute;
@@ -191,6 +302,16 @@
       align-items: center;
       background-color: $grayscale-white;
       box-shadow: 0px 1px 26px -5px rgba(53, 53, 53, 0.2);
+
+      @include desktop {
+        left: 6%;
+        top: 20px;
+      }
+
+      @include mobile-s {
+        position: unset;
+        margin-bottom: 30px;
+      }
 
       &-name {
         font-weight: 600;
@@ -209,6 +330,12 @@
       @extend %text-regular;
       color: $grayscale10;
       margin-bottom: 40px;
+
+      @include desktop {
+        text-align: center;
+        color: #fff;
+        padding-inline: 10px;
+      }
     }
   }
 
@@ -216,6 +343,10 @@
     background-color: $primary100;
     color: $grayscale-white;
     transition: all 0.4s ease-in;
+
+    @include desktop {
+      margin: 0 auto;
+    }
 
     &:hover {
       background-color: $grayscale-white;
@@ -227,8 +358,25 @@
 
 .service {
   &__body {
+    overflow: hidden;
+    padding-bottom: 522px;
     padding-top: 80px;
     position: relative;
+
+    @include tablet {
+      padding-top: 80px;
+      padding-bottom: 322px;
+    }
+
+    @include mobile {
+      padding-top: 40px;
+      padding-bottom: 122px;
+    }
+
+    @include mobile-s {
+      padding-top: 20px;
+      padding-bottom: 56px;
+    }
   }
 
   &__wrapper {
@@ -256,18 +404,30 @@
       background: $grayscale-black;
       height: 2px;
       width: 516px;
+
+      @include tablet {
+        width: 100%;
+      }
     }
   }
 
   &__info {
     @extend %title-third;
     margin-bottom: 24px;
+
+    @include tablet {
+      font-size: clamp(18px, 4vw, 36px);
+    }
   }
 
   &__text {
     @extend %text-regular;
     color: $grayscale10;
     max-width: 471px;
+
+    @include tablet {
+      font-size: clamp(12px, 2vw, 18px);
+    }
   }
 
   &__list {
@@ -297,6 +457,10 @@
     & span {
       margin-right: 40px;
     }
+
+    &-span {
+      margin-right: 46px !important;
+    }
   }
 
   &__image {
@@ -304,12 +468,16 @@
     left: 124px;
     top: 361px;
     z-index: -1;
+
+    @include tablet {
+      z-index: 1;
+      opacity: 0.2;
+    }
   }
 }
 
 .product {
   &__body {
-    margin-top: 522px;
     padding-bottom: 80px;
   }
 
