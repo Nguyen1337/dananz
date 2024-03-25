@@ -85,6 +85,53 @@
   }
 }
 
+.list {
+  &__body {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  &__title {
+    @extend %semibold24;
+    margin-bottom: 24px;
+  }
+
+  &__left-text,
+  &__data,
+  &__copyright,
+  &__right-text {
+    @extend %text-regular;
+    color: $grayscale10;
+  }
+
+  &__info {
+    display: flex;
+    gap: 80px;
+  }
+
+  &__left-text {
+    margin-bottom: 60px;
+    width: 584px;
+  }
+
+  &__right-text:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.interior {
+  &__body {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+}
+
 .footer {
   &:first-child {
     background-color: $primary10;
