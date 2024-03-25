@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
+    <title>Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="./css/portfolio.css" />
   </head>
   <body>
     <header class="header container">
@@ -26,7 +26,11 @@
               <a class="header__nav-link" href="./about us.html">About Us</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="./services.html">Services</a>
+              <a
+                class="header__nav-link header__nav-link--active"
+                href="./services.html"
+                >Services</a
+              >
             </li>
             <li class="header__nav-item">
               <a class="header__nav-link" href="./teams.html">Our Teams</a>
@@ -45,136 +49,169 @@
     <main>
       <section class="section hero container">
         <div class="hero__body">
-          <h1 class="hero__title">Contact Us</h1>
+          <h1 class="hero__title">Portfolio</h1>
           <p class="hero__text">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout.
           </p>
-          <div class="hero__form">
-            <div class="hero__form-name">
-              <div class="hero__form-first">
-                <label class="hero__label" for="firstname">First Name</label>
-                <input
-                  class="hero__input-small"
-                  type="text"
-                  name="firstname"
-                  id="firstname"
-                  placeholder="First Name"
-                />
-              </div>
-              <div class="hero__form-last">
-                <label class="hero__label" for="lastname">Last Name</label>
-                <input
-                  class="hero__input-small"
-                  type="text"
-                  name="lastname"
-                  id="lastname"
-                  placeholder="Last Name"
-                />
-              </div>
-            </div>
-            <div class="hero__form-email">
-              <label class="hero__label" for="email">Email</label>
-              <input
-                class="hero__input-wide"
-                type="text"
-                name="email"
-                id="email"
-                placeholder="Email"
-              />
-            </div>
-            <div class="hero__form-number">
-              <label class="hero__label" for="number">Phone Number</label>
-              <div class="hero__form-wrapper">
-                <button class="hero__numbutton" type="button">
-                  US
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19 8.5L12 15.5L5 8.5"
-                      stroke="black"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <input
-                  class="hero__input-number"
-                  type="text"
-                  name="number"
-                  id="number"
-                  placeholder="Phone Number"
-                />
-              </div>
-            </div>
-            <div class="hero__form-message">
-              <label class="hero__label" for="message">Message</label>
-              <input
-                class="hero__input-high"
-                type="text"
-                name="message"
-                id="message"
-                placeholder="Your Message"
-              />
-            </div>
-          </div>
-          <button class="hero__button button">Send Massage</button>
+          <img class="hero__image" src="./images/portfolio/hero.jpg" alt="" />
         </div>
       </section>
-      <section class="section location container">
-        <div class="location__body">
-          <div class="location__title">
-            <h2 class="location__title-text">Location</h2>
+      <section class="section portfolio container">
+        <div class="portfolio__body">
+          <div class="portfolio__title">
+            <h2 class="portfolio__title-text">ABOUT</h2>
             <span></span>
           </div>
-          <div class="location__wrapper">
-            <div class="location__contacts">
-              <h3 class="location__info">Visit Our Stores</h3>
-              <p class="location__text">Find us at these locations.</p>
-              <h4 class="location__contact">Email</h4>
-              <p class="location__text">dananz@gmail.com</p>
-              <h4 class="location__contact">Phone</h4>
-              <p class="location__text">+62 815 002 1000</p>
+          <div class="portfolio__content">
+            <img
+              class="portfolio__image"
+              src="./images/portfolio/1.jpg"
+              alt=""
+            />
+            <div class="portfolio__column">
+              <div class="portfolio__column-person">
+                <img
+                  class="portfolio__column-image"
+                  src="./images/person-image.svg"
+                  alt=""
+                />
+                <div class="portfolio__column-person-info">
+                  <p class="portfolio__column-person-name">Arga Danaan</p>
+                  <p class="portfolio__column-person-title">CEO of Dananz</p>
+                </div>
+              </div>
+              <p class="portfolio__column-text">
+                Online learning with us does not interfere with your daily life.
+                because learning can be done anytime and anywhere.
+              </p>
+              <button class="portfolio__button button" type="button">
+                Learn More
+              </button>
             </div>
-            <div class="location__list">
-              <div class="location__item">
-                <h4 class="location__subtitle">Jakarta</h4>
-                <p class="location__text">
-                  Customize your interior design into a dream place with the
-                  best designers and quality furniture. We try our best to
-                  fulfill your expectations.
-                </p>
+          </div>
+          <div class="portfolio__content-reverse">
+            <div class="portfolio__column-reverse">
+              <div class="portfolio__column-person-reverse">
+                <img
+                  class="portfolio__column-image"
+                  src="./images/person-image.svg"
+                  alt=""
+                />
+                <div class="portfolio__column-person-info">
+                  <p class="portfolio__column-person-name">Arga Danaan</p>
+                  <p class="portfolio__column-person-title">CEO of Dananz</p>
+                </div>
               </div>
-              <div class="location__item">
-                <h4 class="location__subtitle">Surakarta</h4>
-                <p class="location__text">
-                  Customize your interior design into a dream place with the
-                  best designers and quality furniture. We try our best to
-                  fulfill your expectations.
-                </p>
+              <p class="portfolio__column-text">
+                Online learning with us does not interfere with your daily life.
+                because learning can be done anytime and anywhere.
+              </p>
+              <button class="portfolio__button button" type="button">
+                Learn More
+              </button>
+            </div>
+            <img
+              class="portfolio__image-reverse"
+              src="./images/portfolio/2.jpg"
+              alt=""
+            />
+          </div>
+          <div class="portfolio__content">
+            <img
+              class="portfolio__image"
+              src="./images/portfolio/3.jpg"
+              alt=""
+            />
+            <div class="portfolio__column">
+              <div class="portfolio__column-person">
+                <img
+                  class="portfolio__column-image"
+                  src="./images/person-image.svg"
+                  alt=""
+                />
+                <div class="portfolio__column-person-info">
+                  <p class="portfolio__column-person-name">Arga Danaan</p>
+                  <p class="portfolio__column-person-title">CEO of Dananz</p>
+                </div>
               </div>
-              <div class="location__item">
-                <h4 class="location__subtitle">Yogyakarta</h4>
-                <p class="location__text">
-                  Customize your interior design into a dream place with the
-                  best designers and quality furniture. We try our best to
-                  fulfill your expectations.
-                </p>
+              <p class="portfolio__column-text">
+                Online learning with us does not interfere with your daily life.
+                because learning can be done anytime and anywhere.
+              </p>
+              <button class="portfolio__button button" type="button">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="portfolio__content-reverse">
+            <div class="portfolio__column-reverse">
+              <div class="portfolio__column-person-reverse">
+                <img
+                  class="portfolio__column-image"
+                  src="./images/person-image.svg"
+                  alt=""
+                />
+                <div class="portfolio__column-person-info">
+                  <p class="portfolio__column-person-name">Arga Danaan</p>
+                  <p class="portfolio__column-person-title">CEO of Dananz</p>
+                </div>
               </div>
-              <div class="location__item">
-                <h4 class="location__subtitle">Bandung</h4>
-                <p class="location__text">
-                  Customize your interior design into a dream place with the
-                  best designers and quality furniture. We try our best to
-                  fulfill your expectations.
-                </p>
-              </div>
+              <p class="portfolio__column-text">
+                Online learning with us does not interfere with your daily life.
+                because learning can be done anytime and anywhere.
+              </p>
+              <button class="portfolio__button button" type="button">
+                Learn More
+              </button>
+            </div>
+            <img
+              class="portfolio__image-reverse"
+              src="./images/portfolio/4.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <section class="section service container">
+        <div class="service__body">
+          <div class="service__title">
+            <h2 class="service__title-text">SERVICE</h2>
+            <span></span>
+          </div>
+          <h3 class="service__info">Why Choose Us</h3>
+          <p class="service__text">
+            Customize your interior design into a dream place with the best
+            designers and quality furniture. We try our best to fulfill your
+            expectations.
+          </p>
+          <div class="service__list">
+            <div class="service__item">
+              <span class="service__item-circle"></span>
+              <h4 class="service__item-title">High Quality</h4>
+              <p class="service__item-text">
+                Customize your interior design into a dream place with the best
+                designers and quality furniture. We try our best to fulfill your
+                expectations.
+              </p>
+            </div>
+            <div class="service__item">
+              <span class="service__item-circle"></span>
+              <h4 class="service__item-title">Professional Designer</h4>
+              <p class="service__item-text">
+                Customize your interior design into a dream place with the best
+                designers and quality furniture. We try our best to fulfill your
+                expectations.
+              </p>
+            </div>
+            <div class="service__item">
+              <span class="service__item-circle"></span>
+              <h4 class="service__item-title">The Best Services</h4>
+              <p class="service__item-text">
+                Customize your interior design into a dream place with the best
+                designers and quality furniture. We try our best to fulfill your
+                expectations.
+              </p>
             </div>
           </div>
         </div>
