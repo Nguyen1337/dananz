@@ -25,9 +25,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include tablet {
+      padding-block: 30px;
+    }
+
+    @include mobile {
+      padding-block: 15px;
+    }
+    @include mobile-s {
+      padding-block: 5px;
+    }
   }
 
   &__nav {
+    @include tablet {
+      display: none;
+    }
     &-list {
       display: flex;
       align-items: center;
@@ -41,7 +55,7 @@
 
       transition: color 0.3s ease;
 
-      &:hover {
+      &:hover:not(:last-child) {
         color: $primary100;
       }
 
@@ -61,32 +75,128 @@
       display: flex;
       align-items: center;
     }
+
+    &.open {
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $primary10;
+
+      & .header__nav-list {
+        text-align: center;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+
+  &__burger {
+    @include tablet-above {
+      display: none;
+    }
+    z-index: 200;
+    position: relative;
+    width: 40px;
+
+    & span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $primary100;
+      border-radius: 5px;
+      margin: 6px 0;
+      cursor: pointer;
+      transition: all 0.3s ease-in;
+    }
+
+    &.open {
+      :nth-child(2) {
+        transform: scale(0);
+      }
+
+      span:first-child {
+        transform: translateY(8px) rotate(135deg);
+      }
+
+      span:last-child {
+        transform: translateY(-8px) rotate(-135deg);
+      }
+    }
   }
 }
-
 .hero {
   &__body {
     padding-top: 100px;
     padding-bottom: 50px;
     text-align: center;
+
+    @include desktop {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+
+    @include tablet {
+      padding-top: 60px;
+    }
+
+    @include mobile {
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
   }
 
   &__title {
     @extend %title-second;
     margin-bottom: 36px;
     color: $grayscale-black;
+
+    @include tablet {
+      margin-bottom: 20px;
+      font-size: clamp(40px, 6vw, 56px);
+    }
+
+    @include mobile {
+      margin-bottom: 10px;
+    }
   }
 
   &__text {
     @extend %text-regular;
     color: $grayscale-black;
     margin-bottom: 86px;
+
+    @include tablet {
+      font-size: clamp(12px, 2vw, 18px);
+      margin-bottom: 50px;
+    }
+
+    @include mobile {
+      margin-bottom: 25px;
+    }
+
+    @include mobile-s {
+      margin-bottom: 15px;
+    }
   }
 }
 
 .achievment {
   &__body {
     padding-block: 50px;
+
+    @include tablet {
+      padding-top: 35px;
+    }
+
+    @include mobile {
+      padding-top: 10px;
+    }
   }
 
   &__title {
@@ -103,6 +213,16 @@
       background: $grayscale-black;
       height: 2px;
       width: 464px;
+
+      @include tablet {
+        width: 100%;
+      }
+    }
+  }
+
+  &__photo {
+    @include desktop {
+      width: 100%;
     }
   }
 
@@ -110,11 +230,23 @@
     @extend %title-third;
     max-width: 738px;
     margin-bottom: 56px;
+
+    @include tablet {
+      font-size: clamp(18px, 4vw, 36px);
+    }
+
+    @include mobile-s {
+      margin-bottom: 27px;
+    }
   }
 
   &__images {
     display: flex;
     justify-content: space-between;
+
+    @include desktop {
+      position: relative;
+    }
   }
 
   &__column {
@@ -124,10 +256,33 @@
     gap: 57px;
     background-color: $primary100;
 
+    @include desktop {
+      position: absolute;
+      right: 50px;
+      top: -30px;
+    }
+
+    @include tablet {
+      padding: 20px 25px;
+    }
+
+    @include mobile {
+      padding: 15px 21px;
+    }
+
+    @include mobile-s {
+      right: 0;
+      top: -30px;
+    }
+
     &-title {
       font-size: 52px;
       line-height: 160%;
       color: $grayscale-white;
+
+      @include mobile {
+        font-size: 32px;
+      }
     }
 
     &-text {
@@ -141,6 +296,18 @@
 .service {
   &__body {
     padding-block: 50px;
+
+    @include tablet {
+      padding-bottom: 30px;
+    }
+
+    @include mobile {
+      padding-bottom: 20px;
+    }
+
+    @include mobile-s {
+      padding-top: 60px;
+    }
   }
 
   &__title {
@@ -148,6 +315,10 @@
     gap: 26px;
     align-items: center;
     margin-bottom: 20px;
+
+    @include tablet {
+      font-size: clamp(18px, 4vw, 36px);
+    }
     &-text {
       @extend %mini;
     }
@@ -157,6 +328,10 @@
       background: $grayscale-black;
       height: 2px;
       width: 464px;
+
+      @include tablet {
+        width: 100%;
+      }
     }
   }
 
@@ -171,12 +346,20 @@
     max-width: 471px;
     color: $grayscale10;
     @extend %text-regular;
+
+    @include tablet {
+      font-size: clamp(12px, 2vw, 18px);
+    }
   }
 
   &__list {
     display: flex;
     justify-content: space-between;
     gap: 18px;
+
+    @include tablet {
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
@@ -203,11 +386,19 @@
       font-weight: 600;
       font-size: 24px;
       line-height: 140%;
+
+      @include tablet {
+        font-size: clamp(12px, 3vw, 24px);
+      }
     }
 
     &-text {
       @extend %text-regular;
       color: $grayscale10;
+
+      @include tablet {
+        font-size: clamp(12px, 2vw, 18px);
+      }
     }
   }
 }
@@ -218,8 +409,20 @@
   }
 
   &__background {
-    margin-top: 50px;
+    margin-top: 60px;
     background-color: $primary100;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+
+    @include mobile {
+      margin-top: 30px;
+    }
+
+    @include mobile-s {
+      margin-top: 0;
+    }
   }
 
   &__first {
@@ -229,10 +432,20 @@
     align-items: center;
     gap: 155px;
 
+    @include tablet {
+      gap: 40px;
+      flex-direction: column;
+      text-align: center;
+    }
+
     &-title {
       @extend %title-third;
       color: $grayscale-white;
       max-width: 613px;
+
+      @include tablet {
+        font-size: clamp(18px, 4vw, 36px);
+      }
     }
   }
 
@@ -240,6 +453,10 @@
     &-text {
       @extend %text-regular;
       color: $grayscale-lightgray;
+
+      @include tablet {
+        font-size: clamp(12px, 2vw, 18px);
+      }
     }
   }
 
@@ -262,11 +479,39 @@
     gap: 279px;
     align-items: center;
 
+    @include tablet {
+      padding-top: 40px;
+      margin-bottom: 40px;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    @include mobile {
+      padding-top: 30px;
+      margin-bottom: 30px;
+      flex-direction: column;
+    }
+
+    @include mobile-s {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
     &-title {
       margin-top: 10px;
       @extend %title-third;
       color: $grayscale50;
       max-width: 481px;
+
+      @include tablet {
+        font-size: clamp(18px, 4vw, 36px);
+      }
+    }
+  }
+
+  &__logo-inner {
+    @include mobile {
+      text-align: center;
     }
   }
 
@@ -278,6 +523,10 @@
     margin-left: 24px;
     margin-bottom: 20px;
 
+    @include tablet {
+      font-size: clamp(12px, 2vw, 18px);
+    }
+
     &::before {
       transform: translateY(-50%);
       top: 50%;
@@ -288,6 +537,16 @@
       height: 14px;
       background-color: $grayscale50;
       border-radius: 50%;
+
+      @include mobile {
+        width: 10px;
+        height: 10px;
+      }
+
+      // @include mobile-s {
+      //   width: 6px;
+      //   height: 6px;
+      // }
     }
   }
 
@@ -300,6 +559,10 @@
     width: 440px;
     border-bottom: 2px solid $grayscale70;
 
+    @include mobile-s {
+      width: 100%;
+    }
+
     &::placeholder {
       font-size: 16px;
       line-height: 160px;
@@ -309,9 +572,19 @@
 
   &__form {
     max-width: 440px;
+
+    @include mobile-s {
+      max-width: 100%;
+      overflow: hidden;
+    }
   }
 
   &__media {
+    @include mobile {
+      text-align: center;
+      margin: 0 auto;
+    }
+
     &-text {
       margin-bottom: 15px;
       @extend %text-regular;

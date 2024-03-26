@@ -44,12 +44,15 @@
             </li>
           </ul>
         </nav>
+        <div class="header__burger">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </header>
     <main>
       <section class="section hero container">
         <div class="hero__body">
-          <h1 class="hero__title">Portfolio</h1>
+          <h1 class="hero__title">Minimalist Room</h1>
           <p class="hero__text">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout.
@@ -93,11 +96,11 @@
       </section>
       <section class="section interior container">
         <div class="interior__body">
-          <img class="iterior__image" src="./images/minimalist/1.jpg" alt="" />
-          <img class="iterior__image" src="./images/minimalist/2.jpg" alt="" />
-          <img class="iterior__image" src="./images/minimalist/3.jpg" alt="" />
-          <img class="iterior__image" src="./images/minimalist/4.jpg" alt="" />
-          <img class="iterior__image" src="./images/minimalist/5.jpg" alt="" />
+          <img class="interior__image" src="./images/minimalist/1.jpg" alt="" />
+          <img class="interior__image" src="./images/minimalist/2.jpg" alt="" />
+          <img class="interior__image" src="./images/minimalist/3.jpg" alt="" />
+          <img class="interior__image" src="./images/minimalist/4.jpg" alt="" />
+          <img class="interior__image" src="./images/minimalist/5.jpg" alt="" />
         </div>
       </section>
     </main>
@@ -225,5 +228,13 @@
         </div>
       </div>
     </footer>
+    <script>
+      const button = document.querySelector(".header__burger");
+      const menu = document.querySelector(".header__nav");
+      button.addEventListener("click", function () {
+        button.classList.toggle("open");
+        menu.classList.toggle("open");
+      });
+    </script>
   </body>
 </html>

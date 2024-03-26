@@ -44,6 +44,9 @@
             </li>
           </ul>
         </nav>
+        <div class="header__burger">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </header>
     <main>
@@ -69,7 +72,7 @@
           </h3>
           <div class="achievment__images">
             <img
-              class="achievment"
+              class="achievment__photo"
               src="./images/about/achievment.jpg"
               alt=""
             />
@@ -258,5 +261,13 @@
         </div>
       </div>
     </footer>
+    <script>
+      const button = document.querySelector(".header__burger");
+      const menu = document.querySelector(".header__nav");
+      button.addEventListener("click", function () {
+        button.classList.toggle("open");
+        menu.classList.toggle("open");
+      });
+    </script>
   </body>
 </html>
